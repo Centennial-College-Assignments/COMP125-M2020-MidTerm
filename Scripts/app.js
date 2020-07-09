@@ -5,6 +5,8 @@
 
 (function() {
 
+
+
     let introParagraph = document.querySelector("#IntroParagraph");
     if (introParagraph) {
         introParagraph.textContent = `Now is the time to travel to Greece. The country may be going through an economic crisis, 
@@ -72,7 +74,7 @@
     }
 
     let ithaca = document.querySelector("#Ithaca");
-    if (ithaka) {
+    if (ithaca) {
         ithaca.textContent = `Most famous for being the home of Odysseus, and a prominent figure in Homer's "The Odyssey," Ithaca is said to have 
         been inhabited since the 2nd millennium BC. Made up of two islands joined by a narrow strip of land, many visit it to see the legendary 
         sites mentioned by Homer. However, Ithaca is more than its mythical counterpart, beckoning with secluded beaches, dramatic cliffs, beautiful 
@@ -88,16 +90,29 @@
         super laid back island has a number of rooms for rent, those are limited, as the real draw here for many is the free, seaside camping.`;
     }
 
+    let contactForm = document.querySelector("#contactForm");
+    let firstName = document.querySelector("#firstName");
+    let lastName = document.querySelector("#lastName");
+    let contactNumber = document.querySelector("#contactNumber");
+    let email = document.querySelector("#email");
+    let yourMessage = document.querySelector("#yourMessage");
 
 
+    contactForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        console.log("First name entered is :" + firstName.value);
+        console.log("Last name entered is :" + lastName.value);
+        console.log("Contact number entered is :" + contactNumber.value);
+        console.log("Email entered is :" + email.value);
+        console.log("Message entered is :" + yourMessage.value);
 
-    function Start() {
-        addContentToParagraphs();
+        firstName.value = "";
+        lastName.value = "";
+        email.value = "";
+        contactNumber.value = "";
+        yourMessage.value = "";
+    });
 
 
-
-
-    }
-
-    window.addEventListener("load", Start)
+    // window.addEventListener("load", Start)
 })();

@@ -123,31 +123,6 @@
 
     });
 
-    // Adding the code below to add the Image Carousel Banner
-
-    let imageIndex = 0;
-
-    //Defining the function showSlides
-    function showCarousel() {
-
-        let images = document.querySelectorAll(".carousel");
-        for (let i = 0; i < images.length; i++) {
-            images[i].style.display = "none";
-        }
-
-        images[imageIndex].style.display = "block";
-        imageIndex++;
-
-        //when slideindex reaches last slide, then value of slideIndex is reset to 0
-        if (imageIndex > images.length - 1) {
-            imageIndex = 0;
-        }
-
-        // function showSlides is called after every 3 seconds
-        setTimeout(showCarousel, 2000);
-    }
-
-    showCarousel(imageIndex);
 
 
 })();

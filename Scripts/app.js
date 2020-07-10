@@ -1,11 +1,13 @@
-// setup your IIFE (Immediately Invoked Function Expression)
+// File Name: app.js
+// Author: Devesh Kumar
+// Page: index.html 
+// File Description: Custom Javascript File
+
 "use strict";
-
-
 
 (function() {
 
-
+    //Using the code below to inject textContect to different p tags starting from IntroParagraph
 
     let introParagraph = document.querySelector("#IntroParagraph");
     if (introParagraph) {
@@ -36,7 +38,6 @@
          Monroe and Elizabeth Taylor, and remains a swanky summer retreat for Athens' glitterati to this day, full of fancy hotels, mansions and 
          yachts, and stylish boutiques. Aside from a handful of locally-owned cabs, the four-mile-long island has banned cars in town, giving it
          a refreshingly 19th-century vibe, with horse-drawn carriages being a common sight.`;
-
     }
 
     let amorgos = document.querySelector("#Amorgos");
@@ -90,6 +91,9 @@
         super laid back island has a number of rooms for rent, those are limited, as the real draw here for many is the free, seaside camping.`;
     }
 
+
+    // using DOM to select various form components from HTML
+
     let contactForm = document.querySelector("#contactForm");
     let firstName = document.querySelector("#firstName");
     let lastName = document.querySelector("#lastName");
@@ -98,21 +102,52 @@
     let yourMessage = document.querySelector("#yourMessage");
 
 
+    //Using the EventListner below to print on Console when user clicks send button on form
+
     contactForm.addEventListener("submit", function(e) {
         e.preventDefault();
-        console.log("First name entered is :" + firstName.value);
-        console.log("Last name entered is :" + lastName.value);
-        console.log("Contact number entered is :" + contactNumber.value);
-        console.log("Email entered is :" + email.value);
-        console.log("Message entered is :" + yourMessage.value);
+
+        console.log("First name entered is : " + firstName.value);
+        console.log("Last name entered is : " + lastName.value);
+        console.log("Contact number entered is : " + contactNumber.value);
+        console.log("Email entered is : " + email.value);
+        console.log("Message entered is : " + yourMessage.value);
+
+        //The code below will empty out the form fields
 
         firstName.value = "";
         lastName.value = "";
         email.value = "";
         contactNumber.value = "";
         yourMessage.value = "";
+
     });
 
+    // Adding the code below to add the Image Carousel Banner
 
-    // window.addEventListener("load", Start)
+    let imageIndex = 0;
+
+    //Defining the function showSlides
+    function showCarousel() {
+
+        let images = document.querySelectorAll(".carousel");
+        for (let i = 0; i < images.length; i++) {
+            images[i].style.display = "none";
+        }
+
+        images[imageIndex].style.display = "block";
+        imageIndex++;
+
+        //when slideindex reaches last slide, then value of slideIndex is reset to 0
+        if (imageIndex > images.length - 1) {
+            imageIndex = 0;
+        }
+
+        // function showSlides is called after every 3 seconds
+        setTimeout(showCarousel, 2000);
+    }
+
+    showCarousel(imageIndex);
+
+
 })();

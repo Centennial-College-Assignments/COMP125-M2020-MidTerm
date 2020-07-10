@@ -1,4 +1,11 @@
-/* custom syle sheet */
+/*  File Name: app.css
+    Author: Devesh Kumar
+    Page: index.html 
+    File Description: Custom CSS file */
+
+html {
+    scroll-behavior: smooth;
+}
 
 .navbar {
     opacity: 0.8;
@@ -25,4 +32,8 @@ section {
 
 body {
     background: lavender;
+}
+
+.carousel img {
+    width: 100%;
 }

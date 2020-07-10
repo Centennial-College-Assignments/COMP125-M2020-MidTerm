@@ -120,9 +120,6 @@
         email.value = "";
         contactNumber.value = "";
         yourMessage.value = "";
-
     });
-
-
 
 })();
